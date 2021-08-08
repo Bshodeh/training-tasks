@@ -1,6 +1,10 @@
 package example1;
 
-class Circle {
+abstract class shapes {
+    abstract public void draw();
+}
+
+class Circle extends shapes {
 
     private int radius;
 
@@ -11,9 +15,14 @@ class Circle {
     public int getRadius() {
         return radius;
     }
+
+    @Override
+    public void draw() {
+        System.out.println("Drawing Circle with radius " + this.radius);
+    }
 }
 
-class Square {
+class Square extends shapes {
 
     private int side;
 
@@ -24,20 +33,17 @@ class Square {
     public int getSide() {
         return side;
     }
+
+    @Override
+    public void draw() {
+        System.out.println("Drawing Square with side " + this.side);
+    }
 }
 
 class DrawShapes {
-
-    public void draw(Object[] shapes) {
-
-        for (Object shape : shapes) {
-            if (shape instanceof Circle) {
-                Circle c = (Circle) shape;
-                System.out.println("Drawing Circle with radius " + c.getRadius());
-            } else if (shape instanceof Square) {
-                Square s = (Square) shape;
-                System.out.println("Drawing Square with side " + s.getSide());
-            }
+    public void draw(shapes[] shapes) {
+        for (shapes shape : shapes) {
+            shape.draw();
         }
     }
 }

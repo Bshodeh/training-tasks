@@ -1,37 +1,22 @@
-public class employee
-{
-    String a;
-    Integer b;
+public class employee {
+    String type;
+    Integer salary;
 
-    Integer salary()
-    {
-        return b;
+    Integer getSalary() {
+        return salary;
     }
-
-    Integer timeoffbalance(String type)
-    {
-        int s;
-        if (type.equals("NORMAL"))
-        {
-            s = 200;
+    Integer timeOffBalance() {
+        if (this.type.equals("NORMAL")) {
+            return 200;
+            // ....
+        } else if (this.type.equals("CUSTOM")) {
+            return 300;
             // ....
         }
-        else if (type.equals("CUSTOM"))
-        {
-            s = 300;
-            // ....
-        }
-        else
-        {
-            s = 400;
-            // ....
-        }
-        return s;
+        // .....
+        return 400;
     }
-
-    void printbalance()
-    {
-        System.out.println(timeoffbalance(a));
+    void printBalance() {
+        System.out.println(timeOffBalance());
     }
-
 }
