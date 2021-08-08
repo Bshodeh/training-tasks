@@ -5,7 +5,9 @@ class movie {
     private final Integer maxDayRentedRegular = 2;
     private final Integer maxDayRentedChildren = 3;
     private final Double extraCharge = 1.5;
-
+    public String priceCode() {
+        return "";
+    }
     double RentingCharge(int daysRented) {
         double charge = 0;
         switch (priceCode()) {
