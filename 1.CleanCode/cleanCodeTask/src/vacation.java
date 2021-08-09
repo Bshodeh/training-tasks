@@ -1,4 +1,5 @@
 
+
 class movie {
     private final Integer regularCharge = 2;
     private final Integer newRealeseCharge = 3;
@@ -11,7 +12,8 @@ class movie {
     }
     double RentingCharge(int daysRented) {
         double charge = 0;
-        switch (priceCode()) {
+        String movieType = priceCode();
+        switch (movieType) {
             case "REGULAR":
                 charge += regularCharge;
                 if (daysRented > maxDayRentedRegular) {

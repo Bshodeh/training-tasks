@@ -29,26 +29,17 @@ class plane implements  AircraftVehicle{
     String color;
     @Override
     public void setPrice(double price) {
-
     }
-
     @Override
     public void setColor(String color) {
-
     }
-
     @Override
     public void start() {
-
     }
-
     @Override
     public void stop() {
-
     }
-
     @Override
     public void fly() {
-
     }
 }

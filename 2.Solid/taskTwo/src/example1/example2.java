@@ -1,9 +1,7 @@
 package example1;
-
 abstract class shapes {
     abstract public void draw();
 }
-
 class Circle extends shapes {
 
     private int radius;

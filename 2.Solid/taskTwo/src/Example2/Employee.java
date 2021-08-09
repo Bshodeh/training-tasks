@@ -15,7 +15,6 @@ class EmployeeFinance {
         //promotion logic implementation
         return false;
     }
-
     public Double calcIncomeTaxForCurrentYear() {
         //income tax logic implementation
         return new Double(0);
