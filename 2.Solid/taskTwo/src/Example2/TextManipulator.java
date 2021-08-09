@@ -21,14 +21,12 @@ public class TextManipulator {
         }
         return text;
     }
-
     public String findWordAndDelete(String word) {
         if (text.contains(word)) {
             text = text.replace(word, "");
         }
         return text;
     }
-
     public void printText() {
         // some logic
     }

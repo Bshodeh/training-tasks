@@ -2,6 +2,7 @@
 class movie {
     private final Integer regularCharge = 2;
     private final Integer newRealeseCharge = 3;
+    private final Double childrenCharge = 1.5;
     private final Integer maxDayRentedRegular = 2;
     private final Integer maxDayRentedChildren = 3;
     private final Double extraCharge = 1.5;
@@ -19,7 +20,7 @@ class movie {
                 charge += daysRented * newRealeseCharge;
                 break;
             case "CHILDRENS":
-                charge += 1.5;
+                charge += childrenCharge;
                 if (daysRented > maxDayRentedChildren) {
                     charge += (daysRented - maxDayRentedChildren) * extraCharge;
                 }

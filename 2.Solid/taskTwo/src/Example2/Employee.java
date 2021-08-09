@@ -7,7 +7,10 @@ public class Employee {
     private String name;
     private String address;
     private Date dateOfJoining;
+    //Getters & Setters for all the private attributes
+}
 
+class EmployeeFinance {
     public boolean isPromotionDueThisYear() {
         //promotion logic implementation
         return false;
@@ -17,5 +20,4 @@ public class Employee {
         //income tax logic implementation
         return new Double(0);
     }
-    //Getters & Setters for all the private attributes
 }
