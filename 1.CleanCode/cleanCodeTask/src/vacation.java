@@ -7,29 +7,46 @@ class movie {
     private final Integer maxDayRentedRegular = 2;
     private final Integer maxDayRentedChildren = 3;
     private final Double extraCharge = 1.5;
-    public String priceCode() {
-        return "";
+
+    public MovieType priceCode() {
+        return MovieType.REGULAR;
     }
-    double RentingCharge(int daysRented) {
+
+    public double RentingCharge(int daysRented) {
         double charge = 0;
-        String movieType = priceCode();
+        MovieType movieType = priceCode();
         switch (movieType) {
-            case "REGULAR":
-                charge += regularCharge;
-                if (daysRented > maxDayRentedRegular) {
-                    charge += (daysRented - maxDayRentedRegular) * extraCharge;
-                }
+            case REGULAR:
+                charge += regularCharge +
+                        MovieType.checkTaxesRegular(daysRented, maxDayRentedRegular, extraCharge);
                 break;
-            case "NEW_RELEASE":
+            case NEW_RELEASE:
                 charge += daysRented * newRealeseCharge;
                 break;
-            case "CHILDRENS":
-                charge += childrenCharge;
-                if (daysRented > maxDayRentedChildren) {
-                    charge += (daysRented - maxDayRentedChildren) * extraCharge;
-                }
+            case CHILDREN:
+                charge += childrenCharge
+                        + MovieType.checkTaxesChildren(daysRented, maxDayRentedRegular, extraCharge);
                 break;
         }
         return charge;
     }
+}
+
+enum MovieType {
+    REGULAR, NEW_RELEASE, CHILDREN;
+
+    public static double checkTaxesRegular(int daysRented, int maxDayRentedRegular, double extraCharge) {
+        if (daysRented > maxDayRentedRegular) {
+            return (daysRented - maxDayRentedRegular) * extraCharge;
+        }
+        return 0.0;
+    }
+
+    public static double checkTaxesChildren(int daysRented, int maxDayRentedChildren, double extraCharge) {
+        if (daysRented > maxDayRentedChildren) {
+            return (daysRented - maxDayRentedChildren) * extraCharge;
+        }
+        return 0.0;
+    }
+
 }

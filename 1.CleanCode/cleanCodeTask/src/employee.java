@@ -1,5 +1,5 @@
 public class employee {
-    String type;
+    EmployeeType type;
     Integer salary;
 
     Integer getSalary() {
@@ -7,16 +7,11 @@ public class employee {
     }
 
     Integer timeOffBalance() {
-        if (this.type.equals("NORMAL")) {
-            return 200;
-        } else if (this.type.equals("CUSTOM")) {
-            return 300;
-        } else {
-            return 400;
-        }
+        return this.type.getBalance();
     }
 
     void printBalance() {
         System.out.println(timeOffBalance());
     }
 }
+
